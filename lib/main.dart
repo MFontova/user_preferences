@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:user_preferences/screens/screens.dart';
+import 'package:user_preferences/shared_preferences/preferences.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Preferences.init();
+
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,6 +23,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routerName: (context) => const HomeScreen(),
         SettingsScreen.routerName: (context) => const SettingsScreen()
       },
+      theme: ThemeData.light(),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Material App Bar'),
