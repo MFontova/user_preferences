@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:user_preferences/widgets/widgets.dart';
 
 class SettingsScreen extends StatelessWidget {
   static String routerName = 'Settings';
@@ -10,6 +11,7 @@ class SettingsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Settings'),
       ),
+      drawer: Sidemenu(),
       body: Center(
         child: Text('SettingsScreen'),
       ),
